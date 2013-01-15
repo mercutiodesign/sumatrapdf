@@ -77,7 +77,7 @@ void DeleteOldSelectionInfo(WindowInfo *win, bool alsoTextSel)
         win->dm->textSelection->Reset();
 }
 
-void PaintTransparentRectangles(HDC hdc, RectI screenRc, Vec<RectI>& rects, COLORREF selectionColor, BYTE alpha, int margin)
+void PaintTransparentRectangles(HDC hdc, RectI screenRc, Vec<RectI>& rects, COLORREF selectionColor, BYTE alpha, int margin, int padding)
 {
     using namespace Gdiplus;
 
@@ -85,7 +85,9 @@ void PaintTransparentRectangles(HDC hdc, RectI screenRc, Vec<RectI>& rects, COLO
     GraphicsPath path(FillModeWinding);
     screenRc.Inflate(margin, margin);
     for (size_t i = 0; i < rects.Count(); i++) {
-        RectI rc = rects.At(i).Intersect(screenRc);
+		RectI rc = rects.At(i);
+		rc.Inflate(padding, padding);
+		rc = rc.Intersect(screenRc);
         if (!rc.IsEmpty())
             path.AddRectangle(rc.ToGdipRect());
     }
