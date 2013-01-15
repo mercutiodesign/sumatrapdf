@@ -157,3 +157,5 @@ $RECYCLE.BIN/
 *.dat
 *.res
 *.exp
+
+obj-dbg/
