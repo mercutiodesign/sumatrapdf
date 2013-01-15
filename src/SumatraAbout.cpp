@@ -35,7 +35,8 @@
 
 #define ABOUT_WIN_TITLE         _TR("About SumatraPDF")
 
-#define COL_BLUE_LINK           RGB(0x00, 0x20, 0xa0)
+// Light Blue #70A6FF 
+#define COL_BLUE_LINK           RGB(0x70, 0xa6, 0xff)
 
 #define SUMATRA_TXT_FONT        L"Arial Black"
 #define SUMATRA_TXT_FONT_SIZE   24
@@ -579,7 +580,7 @@ void DrawStartPage(WindowInfo& win, HDC hdc, FileHistory& fileHistory, COLORREF 
     /* render recent files list */
     SelectObject(hdc, penThumbBorder);
     SetBkMode(hdc, TRANSPARENT);
-    SetTextColor(hdc, WIN_COL_BLACK);
+    SetTextColor(hdc, WIN_COL_WHITE);
 
     rc.y += titleBox.dy;
     rc.dy -= titleBox.dy;

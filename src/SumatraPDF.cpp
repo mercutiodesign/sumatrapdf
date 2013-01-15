@@ -81,7 +81,7 @@ bool             gUseEbookUI = false;
 // embedded (e.g. in a web browser)
 WCHAR *          gPluginURL = NULL; // owned by CommandLineInfo in WinMain
 
-#define ABOUT_BG_LOGO_COLOR     RGB(0xFF, 0xF2, 0x00)
+#define ABOUT_BG_LOGO_COLOR     RGB(0x33, 0x33, 0x33)
 #define ABOUT_BG_GRAY_COLOR     RGB(0xCC, 0xCC, 0xCC)
 
 // Background color comparison:
